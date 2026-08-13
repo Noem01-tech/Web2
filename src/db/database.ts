@@ -1,9 +1,12 @@
-import {Pool} from "pg";
+import{Pool} from "pg";
 
-export const pool =new Pool({
-    user: process.env.DB_USER,
-  host: localHost,
-  database:user_tag_note,
-  password:17Novembre2003,
-  port: 5432
+
+ const pool= new Pool({
+    host: 'localhost',
+    port: 5432,
+    database: 'studentbase',
+    user: 'fenohasina',
+    password: '17Novembre2003'
 })
+
+export default pool;

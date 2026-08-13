@@ -1,18 +1,9 @@
-import express from 'express';
-import etudiantsRouter from './routes/etudiants';
-import { errorHandler } from './middleWares/errorHandlers';
+import express from "express";
+import{studentController} from './controller/studentController';
 
-const app = express();
+const app=express();
+const PORT= 3000;
 
-app.use(express.json());
 
-app.use('/etudiants', etudiantsRouter);
-
-app.use(errorHandler);
-
-const PORT = 3000;
-
-app.listen(PORT, function () {
-  console.log('Serveur lancé sur http://localhost:' + PORT);
-});
-localhost
+app.use('/')
+app.listen(PORT)
