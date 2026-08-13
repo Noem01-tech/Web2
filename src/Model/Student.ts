@@ -1,6 +1,6 @@
 export interface CreateStudent{
-    name: String;
-    lastName: String;
+    name: string;
+    lastName: string;
 }
 
 export class Student{
