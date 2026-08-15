@@ -1,9 +1,12 @@
 import express from "express";
-import{studentController} from './controller/studentController';
+import  routeur from "./Route/studentRoute";
 
 const app=express();
 const PORT= 3000;
 
+app.use(express.json());
 
-app.use('/')
-app.listen(PORT)
+app.use('/students',routeur)
+app.listen(PORT,()=>{
+    console.log(`Serveur demarre sur http://localhost:${PORT}`)
+})
