@@ -1,6 +1,9 @@
 import { Router } from "express";
+import { authentificationToken } from "../Security/jwt";
+
 
 import{
+    login,
     getAllStudents,
     getStudent,
     createNewStudent,
@@ -10,14 +13,16 @@ import{
 
 const router= Router();
 
-router.get("/",getAllStudents);
+router.post("/login",login)
 
-router.get("/:id",getStudent);
+router.get("/",authentificationToken,getAllStudents);
 
-router.post("/",createNewStudent);
+router.get("/:id",authentificationToken,getStudent);
 
-router.put("/:id",updateAStudent);
+router.post("/",authentificationToken,createNewStudent);
 
-router.delete("/:id", removeStudent);
+router.put("/:id",authentificationToken,updateAStudent);
+
+router.delete("/:id",authentificationToken, removeStudent);
 
 export default router;

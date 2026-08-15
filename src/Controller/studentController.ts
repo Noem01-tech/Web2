@@ -1,4 +1,5 @@
 import { Request,Response} from "express";
+import { generateToken } from "../Security/jwt";
 
 import { getStudents,
         getStudentById,
@@ -6,8 +7,44 @@ import { getStudents,
         updateStudent,
         deleteStudent
  } from "../Service/studentService";
-import { read } from "node:fs";
+
 import { Student } from "../Model/Student";
+
+//partie login
+
+export const login=async(req:Request,res:Response)=>{
+    try{
+        const {id}=req.body;
+        const numericId=Number(id);
+        if(!id|| Number.isNaN(numericId)){
+            return res.status(400).json({
+                message:"id manquant ou invalide"
+            });
+        }
+
+        const student=await getStudentById(numericId);
+
+        if(!student){
+            return res.status(400).json({
+                message: "Aucun eleve avec cet id"
+            });
+        }
+
+        const token=generateToken({id:student.id});
+
+        return res.status(200).json({
+            message:"vonnexion reussie",
+            token:token,
+        });
+    }catch(error){
+        console.error("erreur du serveur",error);
+        return res.status(500).json({
+            message:"Erreur du serveur"
+        })
+    }
+}
+
+//partie pour avoir les resultats des requetes
 
 export async function getAllStudents(req:Request,res:Response){
     try{
