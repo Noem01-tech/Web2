@@ -1,0 +1,55 @@
+.dashboard-header-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.dashboard-add {
+  background: #8a7a4f;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  padding: 10px 16px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.dashboard-add-user {
+  background: #4a5568;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  padding: 10px 16px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.dashboard-success {
+  background: #e6f4ea;
+  color: #1e7a34;
+  padding: 10px 12px;
+  border-radius: 3px;
+  max-width: 400px;
+}
+
+.dashboard-item {
+  align-items: center;
+}
+
+.dashboard-item-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.dashboard-item-actions button {
+  border: 1px solid #d8dde3;
+  background: #fff;
+  border-radius: 3px;
+  padding: 6px 12px;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.dashboard-item-delete {
+  color: #b3261e;
+  border-color: #f3c6c2 !important;
+}

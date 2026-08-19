@@ -1,0 +1,88 @@
+.student-form-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(18, 35, 61, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.student-form {
+  background: #fff;
+  border-radius: 4px;
+  padding: 32px;
+  width: 100%;
+  max-width: 360px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.student-form h2 {
+  margin: 0 0 8px 0;
+  font-family: "Georgia", serif;
+  color: #12233d;
+}
+
+.student-form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 13px;
+  color: #4a5568;
+  font-weight: 500;
+}
+.student-form-field select {
+  border: 1px solid #d8dde3;
+  border-radius: 3px;
+  padding: 9px 11px;
+  font-size: 14px;
+  background: #fff;
+}
+
+.student-form-field input {
+  border: 1px solid #d8dde3;
+  border-radius: 3px;
+  padding: 9px 11px;
+  font-size: 14px;
+}
+
+.student-form-error {
+  background: #fdecea;
+  color: #b3261e;
+  font-size: 13px;
+  padding: 8px 10px;
+  border-radius: 3px;
+  margin: 0;
+}
+
+.student-form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.student-form-cancel {
+  background: transparent;
+  border: 1px solid #d8dde3;
+  border-radius: 3px;
+  padding: 9px 16px;
+  cursor: pointer;
+}
+
+.student-form-submit {
+  background: #12233d;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  padding: 9px 16px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.student-form-submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
